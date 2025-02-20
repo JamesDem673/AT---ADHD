@@ -10,20 +10,26 @@ public class AddTask : MonoBehaviour
     public Button addTaskButton;
     public GameObject Task;
     public GameObject Content;
+    RectTransform rt;
+    int currentHeight = 75;
 
     private void Start()
     {
         addTaskButton.onClick.AddListener(TaskOnClick);
+        rt = Content.GetComponent<RectTransform>();
     }
 
     void TaskOnClick()
     {
         GameObject task = GameObject.Instantiate(Task);
         task.transform.SetParent(Content.transform, false);
+        task.transform.transform.SetLocalPositionAndRotation(new Vector3(162.5f, (Content.transform.childCount * -50), 0), Quaternion.identity);
 
-        Debug.Log(task.gameObject.transform.position);
-        task.transform.transform.SetLocalPositionAndRotation(new Vector3(162.5f, (Content.transform.childCount * -60), 0), Quaternion.identity);
-        Debug.Log(task.gameObject.transform.position);
+        currentHeight += 80;
+        rt.sizeDelta = new Vector2(0, currentHeight);
+
     }
 
 }
+
+

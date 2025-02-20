@@ -285,8 +285,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 0, y: -231.23688}
-  m_SizeDelta: {x: 325, y: 429.2737}
+  m_AnchoredPosition: {x: 0, y: -230.25336}
+  m_SizeDelta: {x: 325, y: 427.3067}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &188405816
 MonoBehaviour:
@@ -312,7 +312,7 @@ MonoBehaviour:
   m_HorizontalScrollbar: {fileID: 0}
   m_VerticalScrollbar: {fileID: 123157206}
   m_HorizontalScrollbarVisibility: 2
-  m_VerticalScrollbarVisibility: 0
+  m_VerticalScrollbarVisibility: 1
   m_HorizontalScrollbarSpacing: -3
   m_VerticalScrollbarSpacing: -3
   m_OnValueChanged:
@@ -843,8 +843,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -0.0000059954086}
-  m_SizeDelta: {x: 0, y: 300}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 75}
   m_Pivot: {x: 0, y: 1}
 --- !u!1 &1321951055
 GameObject:
@@ -1055,7 +1055,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: -17}
+  m_SizeDelta: {x: 0, y: -0.00012207}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &1472614703
 MonoBehaviour:
@@ -1284,7 +1284,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 180800349482474466, guid: 4635bd8060a8af245b916475b43b2dc8, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -64
+      value: -50
       objectReference: {fileID: 0}
     - target: {fileID: 180800349482474466, guid: 4635bd8060a8af245b916475b43b2dc8, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
