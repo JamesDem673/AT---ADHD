@@ -1,0 +1,40 @@
+using System;
+using System.Collections;
+using System.Collections.Generic;
+using TMPro;
+using UnityEngine;
+using UnityEngine.UI;
+
+public class NextDay : MonoBehaviour
+{
+    [SerializeField]
+    public GameObject Content;
+    public Button addTaskButton;
+    public TMP_Text pointSumText;
+    int pointSumInt = 0;
+
+    private void Start()
+    {
+        addTaskButton.onClick.AddListener(SetNextDay);
+    }
+
+    void SetNextDay()
+    {
+        for (int i = 0; i < Content.transform.childCount; i++)
+        {
+            GameObject taskRow = Content.transform.GetChild(i).gameObject;
+            GameObject buttonUI = taskRow.transform.GetChild(0).gameObject;
+
+            if (buttonUI.GetComponent<Toggle>().isOn == true)
+            {
+                buttonUI.GetComponent<Toggle>().isOn = false;
+                GameObject points = buttonUI.transform.GetChild(2).gameObject;
+                String pointsStr = points.GetComponent<UnityEngine.UI.Text>().text;
+                int pointsInt = int.Parse(pointsStr);
+                pointSumInt += pointsInt;
+            }
+
+            pointSumText.SetText(pointSumInt.ToString());
+        }
+    }
+}

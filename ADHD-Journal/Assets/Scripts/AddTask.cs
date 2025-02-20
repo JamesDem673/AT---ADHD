@@ -21,12 +21,14 @@ public class AddTask : MonoBehaviour
 
     void TaskOnClick()
     {
+        rt.sizeDelta = new Vector2(0, currentHeight - 50);
+
         GameObject task = GameObject.Instantiate(Task);
         task.transform.SetParent(Content.transform, false);
         task.transform.transform.SetLocalPositionAndRotation(new Vector3(162.5f, (Content.transform.childCount * -50), 0), Quaternion.identity);
 
-        currentHeight += 80;
-        rt.sizeDelta = new Vector2(0, currentHeight);
+        currentHeight += 50;
+        rt.sizeDelta = new Vector2(0, currentHeight + 50);
 
     }
 
