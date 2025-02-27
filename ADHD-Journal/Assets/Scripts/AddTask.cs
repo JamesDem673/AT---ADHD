@@ -12,6 +12,7 @@ public class AddTask : MonoBehaviour
     public GameObject Content;
     RectTransform rt;
     int currentHeight = 75;
+    public GameObject Tracker;
 
     private void Start()
     {
@@ -30,6 +31,7 @@ public class AddTask : MonoBehaviour
         currentHeight += 50;
         rt.sizeDelta = new Vector2(0, currentHeight + 50);
 
+        Tracker.GetComponent<ImageController>().IncreaseMaxTasks();
     }
 
 }
