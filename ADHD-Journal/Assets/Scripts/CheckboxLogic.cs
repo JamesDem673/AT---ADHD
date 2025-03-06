@@ -16,7 +16,6 @@ public class CheckboxLogic : MonoBehaviour
 
     public void OnToggleChanged(bool state)
     {
-        print(state);
 
         if (state == true)
         {

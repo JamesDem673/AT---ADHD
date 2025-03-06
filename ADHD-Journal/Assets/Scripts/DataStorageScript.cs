@@ -11,8 +11,10 @@ using UnityEngine.UIElements;
 public class DataStorageScript : MonoBehaviour
 {
     public GameObject DateText;
+    public GameObject TaskList;
     string date;
     string[] numbers; 
+    
 
     private void Start()
     {
@@ -31,17 +33,28 @@ public class DataStorageScript : MonoBehaviour
     {
         int dayNum = Int32.Parse(numbers[0]);
         int monthNum = Int32.Parse(numbers[1]);
-        int maxDays = ReturnMonthLength(monthNum);
+        int yearNum = Int32.Parse(numbers[2]);
 
-        Debug.Log(numbers[0]);
+        int maxDays = ReturnMonthLength(monthNum);
 
         if (dayNum + 1 > maxDays)
         {
             dayNum = 1;
-            monthNum++;
+
+
+            if (monthNum == 12)
+            {
+                yearNum++;
+                monthNum = 1;
+            }
+            else
+            {
+                monthNum++;
+            }
 
             numbers[0] = dayNum.ToString();
             numbers[1] = monthNum.ToString();
+            numbers[2] = yearNum.ToString();
         }
         else if (dayNum + 1 <= maxDays)
         {
@@ -52,6 +65,42 @@ public class DataStorageScript : MonoBehaviour
         DateText.GetComponent<TextMeshProUGUI>().SetText(numbers[0] + "/" + numbers[1] + "/" + numbers[2]);
     }
 
+    public void DecreaseDate()
+    {
+        int dayNum = Int32.Parse(numbers[0]);
+        int monthNum = Int32.Parse(numbers[1]);
+        int yearNum = Int32.Parse(numbers[2]);
+
+        int maxDays = ReturnMonthLength(monthNum);
+
+        if (dayNum == 1)
+        {
+            if (monthNum == 1)
+            {
+                monthNum = 12;
+                yearNum--;
+            }
+            else
+            {
+                monthNum--;
+            }
+            
+            dayNum = ReturnMonthLength(monthNum);
+
+            numbers[0] = dayNum.ToString();
+            numbers[1] = monthNum.ToString();
+            numbers[2] = yearNum.ToString();
+        }
+        else
+        {
+            dayNum--;
+            numbers[0] = dayNum.ToString();
+        }
+
+        DateText.GetComponent<TextMeshProUGUI>().SetText(numbers[0] + "/" + numbers[1] + "/" + numbers[2]);
+
+    }
+
     private int ReturnMonthLength(int month)
     {
         switch (month)
@@ -59,7 +108,14 @@ public class DataStorageScript : MonoBehaviour
             case 1:
                 return 31;
             case 2:
-                return 28;
+                if (DateTime.IsLeapYear(Int32.Parse(numbers[2])))
+                {
+                    return 29;
+                }
+                else
+                {
+                    return 28;
+                }
             case 3:
                 return 31;
             case 4:
@@ -88,5 +144,3 @@ public class DataStorageScript : MonoBehaviour
     }
 
 }
-
-

@@ -46,7 +46,6 @@ public class ImageController : MonoBehaviour
 
     private void UpdateIcon()
     {
-        print(completed / maxTasks);
         if (completed / maxTasks > 0 && completed / maxTasks <= 0.25)
         {
             progressTracker.enabled = true;
@@ -56,13 +55,13 @@ public class ImageController : MonoBehaviour
         {
             progressTracker.enabled = true;
             progressTracker.sprite = StepTwo;
-            print(completed / maxTasks);
+
         }
         else if (completed / maxTasks > 0.50 && completed / maxTasks <= 0.75)
         {
             progressTracker.enabled = true;
             progressTracker.sprite = StepThree;
-            print(completed / maxTasks);
+ 
         }
         else if (completed / maxTasks > 0.75 && completed / maxTasks <= 1.0)
         {

@@ -12,13 +12,14 @@ public class NextDay : MonoBehaviour
     public Button addTaskButton;
     public TMP_Text pointSumText;
     int pointSumInt = 0;
+    public GameObject DataStorage;
 
     private void Start()
     {
         addTaskButton.onClick.AddListener(SetNextDay);
     }
 
-    void SetNextDay()
+    public void SetNextDay()
     {
         for (int i = 0; i < Content.transform.childCount; i++)
         {
@@ -29,12 +30,13 @@ public class NextDay : MonoBehaviour
             {
                 buttonUI.GetComponent<Toggle>().isOn = false;
                 GameObject points = buttonUI.transform.GetChild(2).gameObject;
-                String pointsStr = points.GetComponent<UnityEngine.UI.Text>().text;
+                String pointsStr = (points.GetComponent<InputValue>().ReturnPointValue()).ToString();
                 int pointsInt = int.Parse(pointsStr);
                 pointSumInt += pointsInt;
             }
-
+      
             pointSumText.SetText(pointSumInt.ToString());
         }
+        DataStorage.GetComponent<DataStorageScript>().IncreaseDate();
     }
 }
