@@ -14,6 +14,11 @@ public class NameValue : MonoBehaviour
         strName = GO.GetComponent<TMP_InputField>().text;
     }
 
+    public void setString(string Input)
+    {
+        GO.GetComponent<TMP_InputField>().text = Input;
+    }
+
     public string ReturnName()
     {
         return strName;

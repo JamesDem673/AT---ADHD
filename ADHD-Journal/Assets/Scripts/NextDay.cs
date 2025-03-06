@@ -14,6 +14,7 @@ public class NextDay : MonoBehaviour
     int pointSumInt = 0;
     public GameObject DataStorage;
 
+
     private void Start()
     {
         addTaskButton.onClick.AddListener(SetNextDay);
@@ -28,7 +29,6 @@ public class NextDay : MonoBehaviour
 
             if (buttonUI.GetComponent<Toggle>().isOn == true)
             {
-                buttonUI.GetComponent<Toggle>().isOn = false;
                 GameObject points = buttonUI.transform.GetChild(2).gameObject;
                 String pointsStr = (points.GetComponent<InputValue>().ReturnPointValue()).ToString();
                 int pointsInt = int.Parse(pointsStr);
@@ -37,6 +37,7 @@ public class NextDay : MonoBehaviour
       
             pointSumText.SetText(pointSumInt.ToString());
         }
+
         DataStorage.GetComponent<DataStorageScript>().IncreaseDate();
     }
 }

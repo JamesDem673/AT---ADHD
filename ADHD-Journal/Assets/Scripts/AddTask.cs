@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEditor;
@@ -20,7 +21,7 @@ public class AddTask : MonoBehaviour
         rt = Content.GetComponent<RectTransform>();
     }
 
-    void TaskOnClick()
+    public void TaskOnClick()
     {
         rt.sizeDelta = new Vector2(0, currentHeight - 50);
 
@@ -30,8 +31,6 @@ public class AddTask : MonoBehaviour
 
         currentHeight += 50;
         rt.sizeDelta = new Vector2(0, currentHeight + 50);
-
-        Tracker.GetComponent<ImageController>().IncreaseMaxTasks();
     }
 
 }
