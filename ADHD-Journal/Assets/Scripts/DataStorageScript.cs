@@ -218,7 +218,6 @@ public class DataStorageScript : MonoBehaviour
         DateText.GetComponent<TextMeshProUGUI>().SetText(numbers[0] + "/" + numbers[1] + "/" + numbers[2]);
 
         LoadData();
-
     }
     private int ReturnMonthLength(int month)
     {

@@ -305,7 +305,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: '29/12/2025
+  m_text: '06/03/2025
 
 '
   m_isRightToLeft: 0
@@ -639,6 +639,7 @@ GameObject:
   - component: {fileID: 445404649}
   - component: {fileID: 445404652}
   - component: {fileID: 445404651}
+  - component: {fileID: 445404653}
   m_Layer: 5
   m_Name: ProgressBoat
   m_TagString: ProgressionIcon
@@ -703,6 +704,24 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 445404648}
   m_CullTransparentMesh: 1
+--- !u!114 &445404653
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 445404648}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4224dcd21cc241a40934da8daf1172bc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  TaskList: {fileID: 1271392403}
+  progressImage: {fileID: 445404651}
+  icon1: {fileID: 21300000, guid: 7a1313404466f99498d400cff48c79d6, type: 3}
+  icon2: {fileID: 21300000, guid: 23375ee0ab2dec24692a0aa00439dba5, type: 3}
+  icon3: {fileID: 21300000, guid: 0ef519b3d7c964f45b0e0fdfef26c264, type: 3}
+  icon4: {fileID: 21300000, guid: 32402774371ba264ab82092416db93af, type: 3}
 --- !u!1 &491253040
 GameObject:
   m_ObjectHideFlags: 0
