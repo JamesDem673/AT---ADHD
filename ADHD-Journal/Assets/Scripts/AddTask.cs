@@ -12,7 +12,7 @@ public class AddTask : MonoBehaviour
     public GameObject Task;
     public GameObject Content;
     RectTransform rt;
-    int currentHeight = 75;
+    int currentHeight = 0;
     public float xPos = 162.5f;
 
     private void Start()
@@ -27,7 +27,7 @@ public class AddTask : MonoBehaviour
 
         GameObject task = GameObject.Instantiate(Task);
         task.transform.SetParent(Content.transform, false);
-        task.transform.transform.SetLocalPositionAndRotation(new Vector3(xPos, (Content.transform.childCount * -50), 0), Quaternion.identity);
+        task.transform.transform.SetLocalPositionAndRotation(new Vector3(xPos, (Content.transform.childCount * -55) + 5 , 0), Quaternion.identity);
 
         currentHeight += 50;
         rt.sizeDelta = new Vector2(0, currentHeight + 50);

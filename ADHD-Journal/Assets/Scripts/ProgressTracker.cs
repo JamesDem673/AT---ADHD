@@ -29,7 +29,7 @@ public class ProgressTracker : MonoBehaviour
         }
 
         float decimalTicked = (float)ticked / (float)totalTicks;
-
+        
         if (decimalTicked == 1)
         {
             progressImage.sprite = icon4;

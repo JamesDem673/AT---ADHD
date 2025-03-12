@@ -13,8 +13,8 @@ public class NextDay : MonoBehaviour
     public TMP_Text pointSumText;
     int pointSumInt = 0;
     public GameObject DataStorage;
-
-
+    public GameObject FleetControllerRef;
+    
     private void Start()
     {
         addTaskButton.onClick.AddListener(SetNextDay);
@@ -22,6 +22,8 @@ public class NextDay : MonoBehaviour
 
     public void SetNextDay()
     {
+        int ticked = 0;
+
         for (int i = 0; i < Content.transform.childCount; i++)
         {
             GameObject taskRow = Content.transform.GetChild(i).gameObject;
@@ -29,6 +31,7 @@ public class NextDay : MonoBehaviour
 
             if (buttonUI.GetComponent<Toggle>().isOn == true)
             {
+                ticked++;
                 GameObject points = buttonUI.transform.GetChild(2).gameObject;
                 String pointsStr = (points.GetComponent<InputValue>().ReturnPointValue()).ToString();
                 int pointsInt = int.Parse(pointsStr);
@@ -37,6 +40,10 @@ public class NextDay : MonoBehaviour
       
             pointSumText.SetText(pointSumInt.ToString());
         }
+
+        float decimalTicked = (float)ticked / (float)Content.transform.childCount;
+
+        FleetControllerRef.GetComponent<FleetController>().NewValue(decimalTicked);
 
         DataStorage.GetComponent<DataStorageScript>().IncreaseDate();
     }

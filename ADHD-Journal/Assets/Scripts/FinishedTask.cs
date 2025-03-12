@@ -8,11 +8,12 @@ using UnityEngine.UI;
 public class FinishedTask : MonoBehaviour
 {
     GameObject ToDoBar;
-    public GameObject PointsTotal;
+    GameObject PointsTotal;
 
     private void Start()
     {
         ToDoBar = transform.parent.gameObject;
+        PointsTotal = GameObject.FindGameObjectWithTag("Points");
     }
 
     public void TaskFinished()
@@ -20,11 +21,11 @@ public class FinishedTask : MonoBehaviour
         string points = transform.GetChild(4).GetComponent<TMP_InputField>().text;
         int pointsInt = Int32.Parse(points);
         
-        string PointsTotalText = PointsTotal.GetComponent<TMP_Text>().text;
+        string PointsTotalText = PointsTotal.transform.GetChild(0).GetComponent<TMP_Text>().text;
         int pointTotalInt = Int32.Parse(PointsTotalText);
 
-        PointsTotal.GetComponent<TMP_Text>().SetText((pointsInt + pointTotalInt).ToString());
+        PointsTotal.transform.GetChild(0).GetComponent<TMP_Text>().SetText((pointsInt + pointTotalInt).ToString());
 
-        ToDoBar.SetActive(false);
+        Destroy(ToDoBar);
     }
 }
